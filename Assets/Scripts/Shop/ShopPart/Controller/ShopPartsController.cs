@@ -24,7 +24,6 @@ public class ShopPartsController: MonoBehaviour
     public void CreateShopParts()
     {
         shopPartInfos=LoadAndGetShopPartInfos();
-        Debug.Log(shopPartInfos.Length);
         InitShopPart();
     }
 
@@ -43,9 +42,9 @@ public class ShopPartsController: MonoBehaviour
         }
     }
 
-    private float GetCalculatedSaleAmount(int price,int sale)
+    private float GetCalculatedSaleAmount(float price,float sale)
     {
-        return price * (sale / 100);
+        return price * ((100-sale)/100);
     }
 
     private bool GetIsSaleBool(int sale)

@@ -46,7 +46,7 @@ public class ShopPartView : MonoBehaviour
         {
             oldPriceWithSaleHolder.text=normalPrice;
             newPriceWithSaleHolder.text= salePrice;
-            saleHolder.text= salePercent;
+            saleHolder.text="-" + salePercent + "%";
             priceWithSaleObject.SetActive(true);
         }
         else
