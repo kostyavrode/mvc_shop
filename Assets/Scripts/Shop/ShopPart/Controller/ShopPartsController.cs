@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopPartsController
+public class ShopPartsController: MonoBehaviour
 {
-    private ShopPartView shopPartViewPrefab;
+    //[SerializeField] private GameObject 
+
+    [SerializeField] private ShopPartView shopPartViewPrefab;
 
     private ShopPartInfo[] shopPartInfos;
     
@@ -24,9 +26,9 @@ public class ShopPartsController
         }
     }
 
-    private void AnalyzeShopPartInfo()
+    private void AnalyzeShopPartInfo(ShopPartInfo info)
     {
-
+        //foreach (info.Items)
     }
 
     private void SendDataToView(ShopPartInfo info,ShopPartView view)
