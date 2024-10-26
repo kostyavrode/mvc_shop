@@ -999,6 +999,7 @@ MonoBehaviour:
   - {fileID: 2669804476819028061}
   - {fileID: 1888413121144138570}
   bigIcon: {fileID: 2211646258484656203}
+  buyButton: {fileID: 8851034010136639053}
   priceWithSaleObject: {fileID: 2671695648249584021}
   oldPriceWithSaleHolder: {fileID: 9216488503746379918}
   newPriceWithSaleHolder: {fileID: 3067580470428248607}

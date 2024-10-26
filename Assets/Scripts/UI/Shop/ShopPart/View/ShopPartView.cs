@@ -17,6 +17,9 @@ public class ShopPartView : MonoBehaviour
     [Header("Big Icon")]
     [SerializeField] private Image bigIcon;
 
+    [Header("Button")]
+    [SerializeField] private Button buyButton;
+
     [Header("Sale Prices")]
     [SerializeField] private GameObject priceWithSaleObject;
     [SerializeField] private TMP_Text oldPriceWithSaleHolder;
@@ -42,6 +45,8 @@ public class ShopPartView : MonoBehaviour
 
         bigIcon.sprite=bigIconImage;
 
+        buyButton.onClick.AddListener(OnBuyButtonClick);
+
         if (isPriceWithSale)
         {
             oldPriceWithSaleHolder.text=normalPrice;
@@ -54,5 +59,15 @@ public class ShopPartView : MonoBehaviour
             priceWithoutSaleHolder.text=normalPrice;
             priceWithoutSaleObject.SetActive(true);
         }
+    }
+
+    private void OnDisable()
+    {
+        buyButton.onClick.RemoveListener(OnBuyButtonClick);
+    }
+
+    private void OnBuyButtonClick()
+    {
+        Debug.Log("Buy Button Clicked");
     }
 }
