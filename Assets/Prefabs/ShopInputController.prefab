@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopView: {fileID: 1353713664484264440}
-  shopPartsControllerPrefab: {fileID: 1174051924004792860, guid: 462107a85df14354f83078fe959382e6, type: 3}
+  shopPartsControllerPrefab: {fileID: 6813387385522502832, guid: 65444240e0762ca43ad4923bc73bc95d, type: 3}
 --- !u!1 &6862841202211035932
 GameObject:
   m_ObjectHideFlags: 0
