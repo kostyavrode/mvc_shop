@@ -8,12 +8,18 @@ public class ShopController : MonoBehaviour
 
     [SerializeField] private ShopPartsController shopPartsControllerPrefab;
 
-    private void Initialize()
+    private void OnEnable()
     {
         shopView.onInputReceived += HandleReceivedInput;
     }
+    private void OnDisable()
+    {
+        shopView.onInputReceived -= HandleReceivedInput;
+    }
     private void HandleReceivedInput(int inputInt)
     {
-        Instantiate(shopPartsControllerPrefab,this.transform);
+        shopView.gameObject.SetActive(false);
+        ShopPartsController shopPartsController=Instantiate(shopPartsControllerPrefab, this.transform);
+        shopPartsController.CreateShopParts(inputInt);
     }
 }

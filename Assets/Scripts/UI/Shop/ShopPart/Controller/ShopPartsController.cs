@@ -14,31 +14,23 @@ public class ShopPartsController: MonoBehaviour
 
     private ShopPartInfo[] shopPartInfos;
     
-    
 
-    private void Start()
-    {
-        CreateShopParts();
-    }
-
-    public void CreateShopParts()
+    public void CreateShopParts(int count)
     {
         shopPartInfos=LoadAndGetShopPartInfos();
-        InitShopPart();
+        InitShopPart(count);
     }
 
-    private void InitShopPart()
+    private void InitShopPart(int count)
     {
-        foreach(ShopPartInfo shopPartInfo in shopPartInfos)
+        Debug.Log(shopPartInfos.Length);
+        for (int i = 0;i<count;i++)
         {
             ShopPartView newShopPart=GameObject.Instantiate(shopPartViewPrefab,shopPartsContainer);
-            newShopPart.Initialize(
-                shopPartInfo.Header,
-                shopPartInfo.Description,
-                GetSpriteForShopItem(shopPartInfo.Items),
-                GetQuantitiesForShopItem(shopPartInfo.Items)
-                ,GetBigIconSprite(shopPartInfo.BigIconName),GetIsSaleBool(shopPartInfo.Sale),shopPartInfo.Price.ToString(),
-                GetCalculatedSaleAmount(shopPartInfo.Price,shopPartInfo.Sale).ToString(),shopPartInfo.Sale.ToString());
+                newShopPart.Initialize(shopPartInfos[i].Header, shopPartInfos[i].Description,
+                GetSpriteForShopItem(shopPartInfos[i].Items), GetQuantitiesForShopItem(shopPartInfos[i].Items)
+                , GetBigIconSprite(shopPartInfos[i].BigIconName), GetIsSaleBool(shopPartInfos[i].Sale),shopPartInfos[i].Price.ToString(),
+                GetCalculatedSaleAmount(shopPartInfos[i].Price,shopPartInfos[i].Sale).ToString(),shopPartInfos[i].Sale.ToString());
         }
     }
 

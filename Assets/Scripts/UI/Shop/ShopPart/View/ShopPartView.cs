@@ -33,7 +33,7 @@ public class ShopPartView : MonoBehaviour
         headerHolder.text= headerText;
         descriptionHolder.text= descriptionText;
 
-        for (int i = 0; i < itemImage.Length-1; i++)
+        for (int i = 0; i < itemSprites.Length-1; i++)
         {
             itemImage[i].sprite = itemSprites[i];
             itemCountHolder[i].text = itemCount[i];
