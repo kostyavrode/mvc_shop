@@ -33,10 +33,10 @@ public class ShopPartView : MonoBehaviour
         headerHolder.text= headerText;
         descriptionHolder.text= descriptionText;
 
-        for(int i = 0; i < itemImage.Length; i++)
+        for (int i = 0; i < itemImage.Length-1; i++)
         {
             itemImage[i].sprite = itemSprites[i];
-            itemCountHolder[i].text=itemCount[i];
+            itemCountHolder[i].text = itemCount[i];
             itemImage[i].gameObject.SetActive(true);
         }
 

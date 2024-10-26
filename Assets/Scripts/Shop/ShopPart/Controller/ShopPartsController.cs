@@ -10,21 +10,34 @@ public class ShopPartsController: MonoBehaviour
 
     [SerializeField] private ShopPartView shopPartViewPrefab;
 
+    [SerializeField] private Transform shopPartsContainer;
+
     private ShopPartInfo[] shopPartInfos;
     
-    private Transform shopPartsContainer;
+    
+
+    private void Start()
+    {
+        CreateShopParts();
+    }
 
     public void CreateShopParts()
     {
         shopPartInfos=LoadAndGetShopPartInfos();
+        Debug.Log(shopPartInfos.Length);
+        InitShopPart();
     }
 
-    private void CreateShopItems()
+    private void InitShopPart()
     {
         foreach(ShopPartInfo shopPartInfo in shopPartInfos)
         {
             ShopPartView newShopPart=GameObject.Instantiate(shopPartViewPrefab,shopPartsContainer);
-            newShopPart.Initialize(shopPartInfo.Header,shopPartInfo.Description,GetSpriteForShopItem(shopPartInfo.Items), GetQuantitiesForShopItem(shopPartInfo.Items)
+            newShopPart.Initialize(
+                shopPartInfo.Header,
+                shopPartInfo.Description,
+                GetSpriteForShopItem(shopPartInfo.Items),
+                GetQuantitiesForShopItem(shopPartInfo.Items)
                 ,GetBigIconSprite(shopPartInfo.BigIconName),GetIsSaleBool(shopPartInfo.Sale),shopPartInfo.Price.ToString(),
                 GetCalculatedSaleAmount(shopPartInfo.Price,shopPartInfo.Sale).ToString(),shopPartInfo.Sale.ToString());
         }
@@ -59,7 +72,7 @@ public class ShopPartsController: MonoBehaviour
 
     private Sprite GetBigIconSprite(BigIconEnum iconEnum)
     {
-        switch(iconEnum)
+        switch (iconEnum)
         {
             case BigIconEnum.WoodWithAxe:
                 return bigIconSprites[0];
