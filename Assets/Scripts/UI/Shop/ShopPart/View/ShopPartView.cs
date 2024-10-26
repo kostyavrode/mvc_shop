@@ -45,20 +45,23 @@ public class ShopPartView : MonoBehaviour
 
         bigIcon.sprite=bigIconImage;
 
-        buyButton.onClick.AddListener(OnBuyButtonClick);
-
         if (isPriceWithSale)
         {
-            oldPriceWithSaleHolder.text=normalPrice;
-            newPriceWithSaleHolder.text= salePrice;
+            oldPriceWithSaleHolder.text="$ "+normalPrice;
+            newPriceWithSaleHolder.text= "$ "+salePrice;
             saleHolder.text="-" + salePercent + "%";
             priceWithSaleObject.SetActive(true);
         }
         else
         {
-            priceWithoutSaleHolder.text=normalPrice;
+            priceWithoutSaleHolder.text="$ " + normalPrice;
             priceWithoutSaleObject.SetActive(true);
         }
+    }
+
+    private void OnEnable()
+    {
+        buyButton.onClick.AddListener(OnBuyButtonClick);
     }
 
     private void OnDisable()
