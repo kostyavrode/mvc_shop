@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4430849543561804968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367429834029585658}
+  - component: {fileID: 1174051924004792860}
+  m_Layer: 5
+  m_Name: ShopPartsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &367429834029585658
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430849543561804968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1174051924004792860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430849543561804968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f64f5c8620864947a4175c2c1403837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemImageSprites:
+  - {fileID: 21300000, guid: b8b0a0b2551de264b8b76997f6b9fd3f, type: 3}
+  - {fileID: 21300000, guid: 9fd5740af56c65d4aa45225d09d37796, type: 3}
+  - {fileID: 21300000, guid: abfdf82e8ff736447b9acb7c4db0b4b0, type: 3}
+  bigIconSprites:
+  - {fileID: 21300000, guid: c6e056d737670914abb386b9a69c6b79, type: 3}
+  shopPartViewPrefab: {fileID: 5063878436980548663, guid: a1028c27354967e42a082e69a6232476, type: 3}
+  shopPartsContainer: {fileID: 0}
