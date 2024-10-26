@@ -19,7 +19,7 @@ public class GameEntryPoint
 
     private void StartGame()
     {
-        //coroutines.StartCoroutine()
+        coroutines.StartCoroutine(LoadAndStartMainMenu());
     }
 
     private GameEntryPoint()
@@ -32,6 +32,24 @@ public class GameEntryPoint
         Object.DontDestroyOnLoad(uiRoot);
     }
 
+    private IEnumerator LoadAndStartMainMenu()
+    {
+        uiRoot.SetLoadingScreenEnabledState(true);
+        //cachedSceneContainer?.Dispose();
+
+        yield return LoadScene("BOOT");
+        yield return LoadScene("MAINMENU");
+
+        yield return new WaitForEndOfFrame();
+
+        //var sceneEntryPoint = Object.FindObjectOfType<MainMenuEntryPoint>();
+        //var mainMenuContainer = cachedSceneContainer = new DIContainer(rootContainer);
+
+        //sceneEntryPoint.Run(mainMenuContainer, mainMenuEntryParams).Subscribe(mainMenuExitParams =>
+
+
+        uiRoot.SetLoadingScreenEnabledState(false);
+    }
 
     private IEnumerator LoadScene(string sceneName)
     {
