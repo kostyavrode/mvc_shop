@@ -7,15 +7,15 @@ public class ShopPartInfo : ScriptableObject
 {
     [SerializeField] private string header;
     [SerializeField] private string description;
-    [SerializeField] private string[] itemsName;
+    [SerializeField] private ImageData[] itemsName;
     [SerializeField] private string price;
     [SerializeField] private string sale;
-    [SerializeField] private string bigIconName;
+    [SerializeField] private BigIconEnum bigIconName;
 
     public string Header => this.header;
     public string Description => this.description;
-    public string[] ItemsName => this.itemsName;
+    public ImageData[] ItemsName => this.itemsName;
     public string Price => this.price;
     public string Sale => this.sale;
-    public string BigIconName => this.bigIconName;
+    public BigIconEnum BigIconName => this.bigIconName;
 }
