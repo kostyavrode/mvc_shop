@@ -5,8 +5,7 @@ using UnityEngine;
 
 [System.Serializable]
 public struct ImageData
-
 {
         public ShopPartItemIconEnum image;
-        public int quantity;
+        public string quantity;
 }
