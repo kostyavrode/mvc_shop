@@ -6,36 +6,38 @@ using TMPro;
 
 public class ShopPartView : MonoBehaviour
 {
+    [Header("Text")]
     [SerializeField] private TMP_Text headerHolder;
     [SerializeField] private TMP_Text descriptionHolder;
 
-    [SerializeField] private Transform upperLayoutGroup;
-    [SerializeField] private Transform lowerLayoutGroup;
+    [Header("items")]
+    [SerializeField] private Image[] itemImage;
+    [SerializeField] private TMP_Text[] itemCountHolder;
 
+    [Header("Big Icon")]
     [SerializeField] private Image bigIcon;
 
+    [Header("Sale Prices")]
     [SerializeField] private GameObject priceWithSaleObject;
     [SerializeField] private TMP_Text oldPriceWithSaleHolder;
     [SerializeField] private TMP_Text newPriceWithSaleHolder;
     [SerializeField] private TMP_Text saleHolder;
 
+    [Header("Without Sale Prices")]
     [SerializeField] private GameObject priceWithoutSaleObject;
     [SerializeField] private TMP_Text priceWithoutSaleHolder;
 
-    public void Initialize(string headerText,string descriptionText, GameObject[] objectsForUpperGroup, GameObject[] objectsForLowerGroup, Sprite bigIconImage,
+    public void Initialize(string headerText,string descriptionText, Sprite[] itemSprites, string[] itemCount, Sprite bigIconImage,
         bool isPriceWithSale, string normalPrice, string salePrice, string salePercent)
     {
         headerHolder.text= headerText;
         descriptionHolder.text= descriptionText;
 
-        foreach(var obj in objectsForUpperGroup)
+        for(int i = 0; i < itemImage.Length; i++)
         {
-            obj.transform.parent = upperLayoutGroup;
-        }
-
-        foreach(var obj in objectsForLowerGroup)
-        {
-            obj.transform.parent= lowerLayoutGroup;
+            itemImage[i].sprite = itemSprites[i];
+            itemCountHolder[i].text=itemCount[i];
+            itemImage[i].gameObject.SetActive(true);
         }
 
         bigIcon.sprite=bigIconImage;

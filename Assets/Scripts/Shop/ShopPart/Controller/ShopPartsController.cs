@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopPartsController: MonoBehaviour
 {
-    //[SerializeField] private GameObject 
+    [SerializeField] private Sprite[] shopItemImageSprites; 
 
     [SerializeField] private ShopPartView shopPartViewPrefab;
 
