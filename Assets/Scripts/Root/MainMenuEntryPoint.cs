@@ -3,10 +3,17 @@ using UnityEngine;
 public class MainMenuEntryPoint : MonoBehaviour
 {
     [SerializeField] private ShopController shopPrefab;
+
+    private UIRootView uiRoot;
+
+    public void Initialize(UIRootView uiRoot)
+    {
+        this.uiRoot = uiRoot;
+    }
+
     public void StartScene()
     {
-        UIRootView uIRootView = Object.FindObjectOfType<UIRootView>();
-        ShopController shop=Instantiate(this.shopPrefab);
-        uIRootView.AttachSceneUI(shop.gameObject);
+        ShopController shop=Instantiate(shopPrefab);
+        uiRoot.AttachSceneUI(shop.gameObject);
     }
 }

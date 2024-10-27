@@ -17,7 +17,7 @@ MonoBehaviour:
     \u043F\u043E\u0441\u0442\u0440\u043E\u0439 \u043F\u043B\u043E\u0442 \u0441\u0432\u043E\u0435\u0439
     \u043C\u0435\u0447\u0442\u044B"
   items:
-  - image: 0
+  - image: 2
     quantity: 15
   - image: 1
     quantity: 11
@@ -25,7 +25,7 @@ MonoBehaviour:
     quantity: 14
   - image: 2
     quantity: 15
-  - image: 2
+  - image: 0
     quantity: 16
   price: 5
   sale: 20

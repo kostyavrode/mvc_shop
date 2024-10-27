@@ -23,7 +23,6 @@ public class ShopPartsController: MonoBehaviour
 
     private void InitShopPart(int count)
     {
-        Debug.Log(shopPartInfos.Length);
         for (int i = 0;i<count;i++)
         {
             ShopPartView newShopPart=GameObject.Instantiate(shopPartViewPrefab,shopPartsContainer);

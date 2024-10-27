@@ -42,7 +42,9 @@ public class GameEntryPoint
         yield return new WaitForEndOfFrame();
 
         uiRoot.SetLoadingScreenEnabledState(false);
-        var sceneEntryPoint = Object.FindObjectOfType<MainMenuEntryPoint>();
+
+        MainMenuEntryPoint sceneEntryPoint = Object.FindObjectOfType<MainMenuEntryPoint>();
+        sceneEntryPoint.Initialize(uiRoot);
         sceneEntryPoint.StartScene();
     }
 
